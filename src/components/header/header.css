@@ -1,0 +1,42 @@
+header {
+  height: 42px;
+  line-height: 42px;
+  padding: 16px;
+  background-color: #fcfbf7;
+}
+
+header nav{
+  height: 100%;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.header-logo-wrap {
+  display: flex;
+  width: 250px;
+}
+
+.header-logo-default {
+  max-width: 100%;
+  height: auto;
+}
+
+.header-user {
+  display: inline-flex;
+}
+
+.header-user-name {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.header-user-avatar-wrapper {
+  margin-left: 16px;
+}
+
+.header-user-avatar {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
