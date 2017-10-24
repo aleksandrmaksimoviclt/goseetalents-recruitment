@@ -1,3 +1,5 @@
+
+
 body {
   margin: 0;
   padding: 0;
@@ -6,6 +8,7 @@ body {
   color: #343434;
   line-height: 1.618em;
   font-size: 14px;
+  padding-top: 64px;
 }
 @font-face {
   font-family: Roboto;
