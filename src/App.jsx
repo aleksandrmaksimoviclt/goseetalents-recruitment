@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
 
 import Home from './components/home/home';
 import Header from './components/header/header';
-import SearchField from './components/search-field/search-field';
 
 import Applicant from './components/applicant/applicant';
 import Applicants from './applicants.json';
@@ -22,7 +21,6 @@ class App extends React.Component {
       <Router>
         <div>
           <Header />
-          <SearchField />
           <Switch>
               <Route exact={true} path="/" component={Home} />
               <Route path="/applicants/:id" render={({ match }) => (

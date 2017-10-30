@@ -8,6 +8,7 @@ import Applicants from '../../applicants.json';
 
 
 import List from './../../components/list/list';
+import SearchField from './../../components/search-field/search-field';
 
 // const applicantsUrl = 'http://192.168.38.11:8080/applicants/';
 
@@ -38,6 +39,7 @@ class Home extends Component {
   render() {
     return (
       <div className="App">
+        <SearchField />
         <List
           applicants={this.state.applicants}
         />
