@@ -1,0 +1,79 @@
+[
+ {
+  "id": "59f0a4a795cc891459f21a6d",
+  "name": "namn is",
+  "misc": {
+   "tipper": "anna asker",
+   "notes": "very happy",
+   "reminder": "contact tmr",
+   "notinttech": "FrontEnd, UI",
+   "whynotint": "..."
+  }
+ },
+ {
+  "id": "59f0ab3895cc891459f21c28",
+  "name": "eren katiusa",
+  "misc": {
+   "tipper": "anna selin",
+   "notes": "is in sweden next week",
+   "reminder": "contact next week",
+   "notinttech": "backend",
+   "whynotint": "interested"
+  }
+ },
+ {
+  "id": "59f0ab6595cc891459f21c37",
+  "name": "ferenc kaminets",
+  "misc": {
+   "tipper": "anna selin",
+   "notes": "is in sweden next week",
+   "reminder": "contact next week",
+   "notinttech": "backend",
+   "whynotint": "interested"
+  }
+ },
+ {
+  "id": "59f1a3ba4ac3b80a0db5ac8b",
+  "name": "ferenc kaminets",
+  "misc": {
+   "tipper": "anna selin",
+   "notes": "is in sweden next week",
+   "reminder": "contact next week",
+   "notinttech": "backend",
+   "whynotint": "interested"
+  }
+ },
+ {
+  "id": "59f1a7964ac3b80a0db5ad6e",
+  "name": "namn is",
+  "misc": {
+   "tipper": "anna asker",
+   "notes": "very happy",
+   "reminder": "contact tmr",
+   "notinttech": "FrontEnd, UI",
+   "whynotint": "..."
+  }
+ },
+ {
+  "id": "59f1a7a94ac3b80a0db5ad76",
+  "name": "namn is",
+  "misc": {
+   "tipper": "anna asker",
+   "notes": "very happy",
+   "reminder": "contact tmr",
+   "notinttech": "FrontEnd, UI",
+   "whynotint": "..."
+  }
+ },
+ {
+  "id": "59f1b3ac4ac3b80a0db5afdf",
+  "name": "ferenc kaminets",
+  "misc": {
+   "tipper": "anna selin",
+   "notes": "is in sweden next week",
+   "reminder": "contact next week",
+   "notinttech": "backend",
+   "whynotint": "interested"
+  }
+ }
+]

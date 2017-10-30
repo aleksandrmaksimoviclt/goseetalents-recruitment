@@ -1,5 +1,5 @@
 .search-field-wrapper {
-  margin-top: 32px;
+  margin: 32px 0;
 }
 
 .search-field {
@@ -18,7 +18,7 @@
   line-height: 18px;
   transition: 0.3 all;
   margin-left: 8px;
-  margin-right: 16px;
+  margin-right: 32px;
 }
 
 .search-field-input {

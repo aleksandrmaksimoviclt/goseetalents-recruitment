@@ -1,20 +1,37 @@
-import React, { Component } from 'react';
-import './App.css';
-import './fonts/font-awesome/css/font-awesome.css';
+import React from 'react';
 
+import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
 
+import Home from './components/home/home';
 import Header from './components/header/header';
 import SearchField from './components/search-field/search-field';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Header />
-        <SearchField />
-      </div>
-    );
+import Applicant from './components/applicant/applicant';
+import Applicants from './applicants.json';
+
+
+class App extends React.Component {
+
+  state = {
+    applicants: Applicants,
   }
-}
+
+  render() {
+    return(
+      <Router>
+        <div>
+          <Header />
+          <SearchField />
+          <Switch>
+              <Route exact={true} path="/" component={Home} />
+              <Route path="/applicants/:id" render={({ match }) => (
+                <Applicant applicant={this.state.applicants.find(a => a.id === match.params.id)} />
+              )}/>
+          </Switch>
+        </div>
+      </Router>
+    )
+  }
+};
 
 export default App;
