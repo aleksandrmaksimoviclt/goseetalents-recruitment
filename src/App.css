@@ -1,0 +1,5 @@
+a:-webkit-any-link {
+  color: unset;
+  cursor: auto;
+  text-decoration: none;
+}

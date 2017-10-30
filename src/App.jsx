@@ -9,6 +9,7 @@ import SearchField from './components/search-field/search-field';
 import Applicant from './components/applicant/applicant';
 import Applicants from './applicants.json';
 
+import './App.css';
 
 class App extends React.Component {
 
