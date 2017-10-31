@@ -3,3 +3,8 @@ a:-webkit-any-link {
   cursor: auto;
   text-decoration: none;
 }
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}

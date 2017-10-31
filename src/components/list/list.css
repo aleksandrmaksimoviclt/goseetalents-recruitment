@@ -1,14 +1,10 @@
-.list-wrapper {
-  max-width: 1200px;
-  margin: auto;
-}
 .list-item-preview {
   display: flex;
   padding: 32px;
   margin: 16px auto;
   background: #fcfbf7;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  max-width: 600px;
+  max-width: 710px;
   border-radius: 6px;
   cursor: pointer;
   transition: 0.15s all;
@@ -31,14 +27,14 @@
   flex-direction: column;
 }
 .list-item-name {
-  font-size: 26px;
+  font-size: 32px;
   font-weight: 700;
   margin-bottom: 32px;
 }
 .list-item-important-stuff {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 300;
   color: #4a4a4a;
-  max-width: 66ch;
+  max-width: 80ch;
   letter-spacing: 0.03em;
 }

@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Link, } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './list.css';
 
 const List = (props) => (
-  <div className="list-wrapper">
+  <div className="container">
     {props.applicants.map(applicant => (
       <Link
         className="list-item-preview"

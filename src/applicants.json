@@ -1,13 +1,13 @@
 [
  {
   "id": "59f0a4a795cc891459f21a6d",
-  "name": "namn is",
+  "name": "Aleksandr Maksimovic",
   "misc": {
-   "tipper": "anna asker",
-   "notes": "very happy",
-   "reminder": "contact tmr",
-   "notinttech": "FrontEnd, UI",
-   "whynotint": "..."
+   "tipper": "Fredrik Rubensson",
+   "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi elementum sapien id ornare euismod. Praesent sagittis velit nec risus hendrerit, et gravida elit blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra consequat nunc, nec faucibus justo consequat id. Aliquam quis ornare libero. Integer at purus facilisis, ultricies augue non, efficitur libero.",
+   "reminder": "Call tomorrow at 5:00pm",
+   "notinttech": "Ruby, UML, C, Clojure, JavaScript, SQL, Objective-C, Java, HTML, R, PHP, CSS",
+   "whynotint": "In finibus justo eget scelerisque bibendum. Nunc venenatis dui ut lectus luctus, a porta lectus pulvinar. Praesent congue vulputate est eget maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae."
   }
  },
  {

@@ -1,0 +1,26 @@
+.applicant-name {
+  font-size: 128px;
+  line-height: 1;
+  font-weight: bold;
+  padding: 64px;
+  text-align: left;
+}
+.applicant-label {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+.applicant-notes {
+  margin: 0px 64px;
+  max-width: 80ch;
+}
+.applicant-item {
+  margin: 12px 0px;
+}
+.applicant-misc {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  padding: 64px;
+}
