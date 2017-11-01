@@ -1,11 +1,12 @@
 import React from 'react';
 
-import './applicant.css';
+import './applicant-editor.css';
 
 
 const Applicant = (props) => (
   <div className="container">
     <div className="applicant-wrapper">
+      {/* <i className="fa fa-long-arrow-left arrow-back" aria-hidden="true"></i> */}
       <div className="applicant-name-wrapper">
         <div className="applicant-name">{ props.applicant.name }</div>
       </div>
