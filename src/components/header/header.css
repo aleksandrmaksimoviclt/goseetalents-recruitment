@@ -1,8 +1,13 @@
 header {
-  height: 42px;
-  line-height: 42px;
+  height: 32px;
+  line-height: 32px;
   padding: 16px;
   background-color: #fcfbf7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.3);
 }
 
 header nav{
@@ -14,7 +19,7 @@ header nav{
 
 .header-logo-wrap {
   display: flex;
-  width: 250px;
+  width: 200px;
 }
 
 .header-logo-default {
