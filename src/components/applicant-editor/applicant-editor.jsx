@@ -1,51 +1,67 @@
 import React from 'react';
+import Textarea from './../textarea/textarea';
 
 import './applicant-editor.css';
 
 
-const Applicant = (props) => (
+const ApplicantEditor = (props) => (
   <div className="container">
     <div className="applicant-wrapper">
-      {/* <i className="fa fa-long-arrow-left arrow-back" aria-hidden="true"></i> */}
       <div className="applicant-name-wrapper">
-        <div className="applicant-name">{ props.applicant.name }</div>
+        <Textarea
+          name="name"
+          applicant={props.applicant}
+          updateApplicantField={props.updateApplicantField}
+        />
       </div>
       <div className="container">
-        <div className="applicant-notes">
-          { props.applicant.misc.notes }
+        <div className="applicant-notes-wrapper">
+          <Textarea
+            name="notes"
+            applicant={props.applicant}
+            updateApplicantField={props.updateApplicantField}
+          />
         </div>
         <div className="applicant-misc">
           <div className="applicant-tipper-wrapper">
             <div className="applicant-label">
               Tipper
             </div>
-            <div className="applicant-tipper-field applicant-item">
-              { props.applicant.misc.tipper }
-            </div>
+            <Textarea
+              name="tipper"
+              applicant={props.applicant}
+              updateApplicantField={props.updateApplicantField}
+            />
           </div>
           <div className="applicant-reminder-wrapper">
             <div className="applicant-label">
               Reminder
             </div>
-            <div className="applicant-reminder applicant-item">
-              { props.applicant.misc.reminder }
-            </div>
+            <Textarea
+              name="reminder"
+              applicant={props.applicant}
+              updateApplicantField={props.updateApplicantField}
+            />
           </div>
           <div className="applicant-notinttech-wrapper">
             <div className="applicant-label">
               No interest in
             </div>
-            <div className="applicant-technologies applicant-item">
-              { props.applicant.misc.notinttech }
-            </div>
+            <Textarea
+              name="notinttech"
+              applicant={props.applicant}
+              updateApplicantField={props.updateApplicantField}
+            />
           </div>
           <div className="applicant-whynotint-wrapper">
             <div className="applicant-label">
               Reason
             </div>
-            <div className="applicant-reason applicant-item">
-              { props.applicant.misc.whynotint }
-            </div>
+            <Textarea
+              name="whynotint"
+              applicant={props.applicant}
+              updateApplicantField={props.updateApplicantField}
+            />
           </div>
         </div>
       </div>
@@ -53,4 +69,4 @@ const Applicant = (props) => (
   </div>
 );
 
-export default Applicant;
+export default ApplicantEditor;

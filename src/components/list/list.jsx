@@ -13,14 +13,13 @@ const List = (props) => (
         key={applicant.id}
         to={{
           pathname: `/applicants/${applicant.id}`,
-          state: { modal: true }
         }} >
         <div className="list-item-info-wrapper">
           <div className="list-item-name">
             {applicant.name}
           </div>
           <div className="list-item-important-stuff">
-            {applicant.misc.notes}
+            {applicant.notes}
           </div>
         </div>
       </Link>
