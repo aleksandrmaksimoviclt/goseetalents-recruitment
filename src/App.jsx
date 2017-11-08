@@ -7,7 +7,6 @@ import Home from './components/home/home';
 import Header from './components/header/header';
 
 import ApplicantEditor from './components/applicant-editor/applicant-editor';
-// import Applicants from './applicants.json';
 
 import './App.css';
 
