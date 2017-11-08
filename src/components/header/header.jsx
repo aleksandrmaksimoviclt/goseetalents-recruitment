@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// import SearchField from './../search-field/search-field';
 import './header.css';
 import Avatar from './../../images/photo2-min.jpg';
-import Logo from './../../images/gosee-logotype.svg'
+import Logo from './../../images/gosee-logotype.svg';
+
 
 const Header = () => (
   <header className="header">
@@ -14,11 +16,7 @@ const Header = () => (
         aria-label="Home">
         <img src={Logo} className="header-logo-default" alt="Logo" />
       </Link>
-      {/* <ul className="header-tabs-wrapper">
-        <li className="header-tabs">Tab 1</li>
-        <li className="header-tabs">Tab 2</li>
-        <li className="header-tabs">Tab 3</li>
-      </ul> */}
+      {/* <SearchField /> */}
       <div className="header-user">
         <span className="header-user-name">
           Aleksandr

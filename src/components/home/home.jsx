@@ -44,7 +44,6 @@ class Home extends Component {
   render() {
     return (
       <div className="App">
-        {/* <SearchField /> */}
         <List
           applicants={this.state.applicants}
         />

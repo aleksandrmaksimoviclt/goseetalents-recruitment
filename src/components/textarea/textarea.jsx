@@ -12,6 +12,7 @@ const Textarea = (props) => (
       )
     }
     spellCheck="false"
+    placeholder="-"
     name={props.name}
     defaultValue={props.applicant[props.name]}
     className={`applicant-${props.name}`}>

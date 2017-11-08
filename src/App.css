@@ -1,3 +1,7 @@
+.App {
+  margin-top: 16px;
+}
+
 a:-webkit-any-link {
   color: unset;
   cursor: auto;

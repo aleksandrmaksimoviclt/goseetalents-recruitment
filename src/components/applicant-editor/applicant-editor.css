@@ -72,3 +72,7 @@ textarea{
   overflow: hidden;
   resize: none;
 }
+
+textarea:hover{
+
+}

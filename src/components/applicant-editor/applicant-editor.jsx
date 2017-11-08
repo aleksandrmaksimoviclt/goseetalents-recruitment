@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Textarea from './../textarea/textarea';
 
 import './applicant-editor.css';
@@ -10,7 +10,7 @@ const ApplicantEditor = (props) => {
     return (
       <div className="container">
         <div className="applicant-wrapper">
-          <div className="applicant-editor-navigaion">
+          {/* <div className="applicant-editor-navigaion">
             <Link
               className="arrow-back"
               to={{
@@ -19,7 +19,7 @@ const ApplicantEditor = (props) => {
             >
               <i className="fa fa-chevron-left"></i>
             </Link>
-          </div>
+          </div> */}
           <div className="applicant-editor-body">
             <div className="applicant-name-wrapper">
               <Textarea
