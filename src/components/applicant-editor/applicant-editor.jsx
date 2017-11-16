@@ -1,9 +1,8 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import Textarea from './../textarea/textarea';
 
 import './applicant-editor.css';
-
+import ApplicantDeleteButton from './../applicant-delete-button/applicant-delete-button';
 
 const ApplicantEditor = (props) => {
   if(props.applicant !== undefined) {
@@ -80,6 +79,11 @@ const ApplicantEditor = (props) => {
               </div>
             </div>
           </div>
+          {props.applicant.id !== undefined &&
+            <ApplicantDeleteButton
+              applicantID={props.applicant.id}
+            />
+          }
         </div>
       </div>
     );
