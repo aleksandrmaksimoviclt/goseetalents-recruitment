@@ -63,13 +63,18 @@ class App extends React.Component {
         <div>
           <Header />
           <Switch>
-              <Route exact={true} path="/" component={Home} />
-              <Route path="/applicants/:id" render={({ match }) => (
-                <ApplicantEditor
-                  applicant={this.state.applicants.find(applicant => applicant.id === match.params.id)}
-                  updateApplicantField={this.updateApplicantField}
-                />
-              )}/>
+              <Route exact={true} path="/" render={(props) => (
+                <Home applicants={this.state.applicants} {...props}/>
+              )} />
+              <Route path="/applicants/:id" render={({ match, props }) => {
+                return(
+                  <ApplicantEditor
+                    applicant={this.state.applicants.find(applicant => applicant.id === match.params.id)}
+                    updateApplicantField={this.updateApplicantField}
+                    {...props}
+                  />
+                )
+              }}/>
           </Switch>
         </div>
       </Router>
