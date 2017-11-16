@@ -2,16 +2,12 @@ import React from 'react';
 import Axios from 'axios';
 
 import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
-
 import Home from './components/home/home';
 import Header from './components/header/header';
-
 import ApplicantEditor from './components/applicant-editor/applicant-editor';
-
 import './App.css';
+import { API_URL } from './constants';
 
-const API_URL = 'http://192.168.38.11:8080';
-const APPLICANT_URL = `${API_URL}/applicants`;
 class App extends React.Component {
 
   state = {
@@ -21,10 +17,11 @@ class App extends React.Component {
   componentWillMount() {
     this.getApplicants();
   }
+  
   getApplicants = () => {
     const self = this;
     Axios
-      .get('http://192.168.38.11:8080/applicants/')
+      .get(`${API_URL}/applicants`)
       .then((response) => {
         if (response.status === 200) {
           self.setState({ applicants: response.data });
@@ -32,7 +29,6 @@ class App extends React.Component {
       })
       .catch((error) => {
         console.log(error.message);
-        console.log(error);
       });
   }
 
@@ -42,7 +38,7 @@ class App extends React.Component {
     currentApplicant[fieldName] = value;
 
     Axios
-      .put(`${APPLICANT_URL}/${applicantID}/`, currentApplicant)
+      .put(`${API_URL}/applicants/${applicantID}/`, currentApplicant)
       .then((response) => {
         if(response.status === 204){
           const updatedApplicants = this.state.applicants.map((applicant) => {
