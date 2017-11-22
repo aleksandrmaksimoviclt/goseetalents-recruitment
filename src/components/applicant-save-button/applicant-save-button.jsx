@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+import './applicant-save-button.css';
+
 const ApplicantSaveButton = (props) => {
 
   this.saveApplicant = () => {
@@ -12,8 +14,11 @@ const ApplicantSaveButton = (props) => {
   }
 
   return (
-    <div className="applicant-editor-controls">
+    <div className="applicant-editor-controls save">
       <i onClick={ () => this.saveApplicant() } className="fa fa-floppy-o small-icon" aria-hidden="true"></i>
+      <span className="applicant-editor-controls-text">
+        Save
+      </span>
     </div>
   );
 }
