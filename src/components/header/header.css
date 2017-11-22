@@ -15,7 +15,7 @@ header nav{
   height: 100%;
   width: 100%;
   display: inline-flex;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
 }
 
 .header-logo-wrap {
@@ -26,6 +26,13 @@ header nav{
 .header-logo-default {
   max-width: 100%;
   height: auto;
+}
+
+.header-add-new {
+  margin-left: auto;
+  margin-right: 16px;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .header-user {
@@ -40,7 +47,10 @@ header nav{
 .header-user-avatar-wrapper {
   margin-left: 16px;
 }
-
+.header-add-new {
+  margin-left: auto;
+  margin-right: 16px;
+}
 .header-user-avatar {
   max-width: 100%;
   height: 100%;

@@ -13,6 +13,7 @@ class App extends React.Component {
   state = {
     applicants: [],
     applicant: {},
+    searchFieldValue: "",
   }
 
   componentWillMount() {
@@ -82,16 +83,38 @@ class App extends React.Component {
 
   }
 
+  handleSearchInput = (event) => {
+    this.setState({ searchFieldValue: event.target.value });
+
+    const self = this;
+
+    Axios
+      .get(`${API_URL}/applicants?name=${self.state.searchFieldValue}`)
+      .then((response) => {
+        if(response.status === 200){
+          self.setState({ applicants: response.data });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   noop = () => {};
 
   render() {
     return(
       <Router>
         <div>
-          <Header />
+          <Header
+            searchFieldValue={this.state.searchFieldValue}
+            handleSearchInput={this.handleSearchInput}
+          />
           <Switch>
               <Route exact={true} path="/" render={(props) => (
-                <Home applicants={this.state.applicants} {...props}/>
+                <Home
+                  applicants={this.state.applicants}
+                  {...props}/>
               )} />
               <Route path="/applicants/:id" render={({ match, props }) => (
                   <ApplicantEditor

@@ -1,5 +1,7 @@
 .search-field-wrapper {
-  /*margin: 32px 0;*/
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .search-field {
