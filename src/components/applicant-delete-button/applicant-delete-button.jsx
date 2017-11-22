@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import Axios from 'axios';
 import { API_URL } from './../../constants.js';
 
-const ButtonToNavigate = (props) => {
+const ApplicantDeleteButton = (props) => {
   this.deleteApplicant = (applicantID) => {
     Axios
       .delete(`${API_URL}/applicants/${applicantID}/`)
@@ -21,4 +21,4 @@ return (
 );
 }
 
-export default withRouter(ButtonToNavigate);
+export default withRouter(ApplicantDeleteButton);

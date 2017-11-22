@@ -2,29 +2,22 @@ import React from 'react';
 import Textarea from './../textarea/textarea';
 
 import './applicant-editor.css';
+import ApplicantSaveButton from './../applicant-save-button/applicant-save-button';
 import ApplicantDeleteButton from './../applicant-delete-button/applicant-delete-button';
 
+
 const ApplicantEditor = (props) => {
-  if(props.applicant !== undefined) {
-    return (
-      <div className="container">
+
+  return (
+    <div className="container">
         <div className="applicant-wrapper">
-          {/* <div className="applicant-editor-navigaion">
-            <Link
-              className="arrow-back"
-              to={{
-                pathname: `/`,
-              }}
-            >
-              <i className="fa fa-chevron-left"></i>
-            </Link>
-          </div> */}
           <div className="applicant-editor-body">
             <div className="applicant-name-wrapper">
               <Textarea
                 name="name"
                 applicant={props.applicant}
                 updateApplicantField={props.updateApplicantField}
+                handleTextAreValueChange={props.handleTextAreValueChange}
               />
             </div>
             <div className="container">
@@ -33,6 +26,7 @@ const ApplicantEditor = (props) => {
                   name="notes"
                   applicant={props.applicant}
                   updateApplicantField={props.updateApplicantField}
+                  handleTextAreValueChange={props.handleTextAreValueChange}
                 />
               </div>
               <div className="applicant-misc">
@@ -44,6 +38,7 @@ const ApplicantEditor = (props) => {
                     name="tipper"
                     applicant={props.applicant}
                     updateApplicantField={props.updateApplicantField}
+                    handleTextAreValueChange={props.handleTextAreValueChange}
                   />
                 </div>
                 <div className="applicant-reminder-wrapper">
@@ -54,6 +49,7 @@ const ApplicantEditor = (props) => {
                     name="reminder"
                     applicant={props.applicant}
                     updateApplicantField={props.updateApplicantField}
+                    handleTextAreValueChange={props.handleTextAreValueChange}
                   />
                 </div>
                 <div className="applicant-notinttech-wrapper">
@@ -64,6 +60,7 @@ const ApplicantEditor = (props) => {
                     name="notinttech"
                     applicant={props.applicant}
                     updateApplicantField={props.updateApplicantField}
+                    handleTextAreValueChange={props.handleTextAreValueChange}
                   />
                 </div>
                 <div className="applicant-whynotint-wrapper">
@@ -74,20 +71,28 @@ const ApplicantEditor = (props) => {
                     name="whynotint"
                     applicant={props.applicant}
                     updateApplicantField={props.updateApplicantField}
+                    handleTextAreValueChange={props.handleTextAreValueChange}
                   />
                 </div>
               </div>
             </div>
           </div>
-          {props.applicant.id !== undefined &&
+
+          {props.applicant.id !== "new-applicant" &&
             <ApplicantDeleteButton
               applicantID={props.applicant.id}
             />
           }
+
         </div>
-      </div>
-    );
-  }
-  return null
+
+        {props.applicant.id === "new-applicant" &&
+          <ApplicantSaveButton
+            createNewApplicant={props.createNewApplicant}
+          />
+        }
+        
+    </div>
+  );
 }
 export default ApplicantEditor;

@@ -11,6 +11,12 @@ const Textarea = (props) => (
         event.target.value
       )
     }
+    onChange={
+      (event) => props.handleTextAreValueChange(
+        event.target.name,
+        event.target.value
+      )
+    }
     spellCheck="false"
     placeholder="-"
     name={props.name}
