@@ -4,8 +4,10 @@ body {
   font-family: Roboto, sans-serif;
   background-color: #de3c4a;
   color: #343434;
-  line-height: 1.618em;
-  font-size: 14px;
+  line-height: 1.618;
+  font-size: 16px;
+  letter-spacing: 0.03rem;
+  padding-top: 64px;
 }
 @font-face {
   font-family: Roboto;

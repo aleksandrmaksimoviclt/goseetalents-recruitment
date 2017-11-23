@@ -1,25 +1,38 @@
 header {
-  height: 42px;
-  line-height: 42px;
+  height: 32px;
+  line-height: 32px;
   padding: 16px;
   background-color: #fcfbf7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.3);
+  z-index: 999;
 }
 
 header nav{
   height: 100%;
   width: 100%;
   display: inline-flex;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
 }
 
 .header-logo-wrap {
   display: flex;
-  width: 250px;
+  width: 200px;
 }
 
 .header-logo-default {
   max-width: 100%;
   height: auto;
+}
+
+.header-add-new {
+  margin-left: auto;
+  margin-right: 16px;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .header-user {
@@ -34,7 +47,10 @@ header nav{
 .header-user-avatar-wrapper {
   margin-left: 16px;
 }
-
+.header-add-new {
+  margin-left: auto;
+  margin-right: 16px;
+}
 .header-user-avatar {
   max-width: 100%;
   height: 100%;
