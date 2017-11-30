@@ -2,78 +2,64 @@
  {
   "id": "59f0a4a795cc891459f21a6d",
   "name": "Aleksandr Maksimovic",
-  "misc": {
-   "tipper": "Fredrik Rubensson",
-   "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi elementum sapien id ornare euismod. Praesent sagittis velit nec risus hendrerit, et gravida elit blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra consequat nunc, nec faucibus justo consequat id. Aliquam quis ornare libero. Integer at purus facilisis, ultricies augue non, efficitur libero.",
-   "reminder": "Call tomorrow at 5:00pm",
-   "notinttech": "Ruby, UML, C, Clojure, JavaScript, SQL, Objective-C, Java, HTML, R, PHP, CSS",
-   "whynotint": "In finibus justo eget scelerisque bibendum. Nunc venenatis dui ut lectus luctus, a porta lectus pulvinar. Praesent congue vulputate est eget maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae."
-  }
+  "tipper": "Fredrik Rubensson",
+  "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi elementum sapien id ornare euismod. Praesent sagittis velit nec risus hendrerit, et gravida elit blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra consequat nunc, nec faucibus justo consequat id. Aliquam quis ornare libero. Integer at purus facilisis, ultricies augue non, efficitur libero.",
+  "reminder": "Call tomorrow at 5:00pm",
+  "notinttech": "Ruby, UML, C, Clojure, JavaScript, SQL, Objective-C, Java, HTML, R, PHP, CSS",
+  "whynotint": "In finibus justo eget scelerisque bibendum. Nunc venenatis dui ut lectus luctus, a porta lectus pulvinar. Praesent congue vulputate est eget maximus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae."
  },
  {
   "id": "59f0ab3895cc891459f21c28",
   "name": "Eren Katiusa",
-  "misc": {
-   "tipper": "anna selin",
-   "notes": "is in sweden next week",
-   "reminder": "contact next week",
-   "notinttech": "backend",
-   "whynotint": "interested"
-  }
+  "tipper": "anna selin",
+  "notes": "is in sweden next week",
+  "reminder": "contact next week",
+  "notinttech": "backend",
+  "whynotint": "interested"
  },
  {
   "id": "59f0ab6595cc891459f21c37",
   "name": "Ferenc Kaminets",
-  "misc": {
-   "tipper": "anna selin",
-   "notes": "is in sweden next week",
-   "reminder": "contact next week",
-   "notinttech": "backend",
-   "whynotint": "interested"
-  }
+  "tipper": "anna selin",
+  "notes": "is in sweden next week",
+  "reminder": "contact next week",
+  "notinttech": "backend",
+  "whynotint": "interested"
  },
  {
   "id": "59f1a3ba4ac3b80a0db5ac8b",
   "name": "Ferenc Kaminets",
-  "misc": {
-   "tipper": "anna selin",
-   "notes": "is in sweden next week",
-   "reminder": "contact next week",
-   "notinttech": "backend",
-   "whynotint": "interested"
-  }
+  "tipper": "anna selin",
+  "notes": "is in sweden next week",
+  "reminder": "contact next week",
+  "notinttech": "backend",
+  "whynotint": "interested"
  },
  {
   "id": "59f1a7964ac3b80a0db5ad6e",
   "name": "Asmali Hubarin",
-  "misc": {
-   "tipper": "anna asker",
-   "notes": "very happy",
-   "reminder": "contact tmr",
-   "notinttech": "FrontEnd, UI",
-   "whynotint": "..."
-  }
+  "tipper": "anna asker",
+  "notes": "very happy",
+  "reminder": "contact tmr",
+  "notinttech": "FrontEnd, UI",
+  "whynotint": "..."
  },
  {
   "id": "59f1a7a94ac3b80a0db5ad76",
   "name": "Viktor Rodriges",
-  "misc": {
-   "tipper": "anna asker",
-   "notes": "very happy",
-   "reminder": "contact tmr",
-   "notinttech": "FrontEnd, UI",
-   "whynotint": "..."
-  }
+  "tipper": "anna asker",
+  "notes": "very happy",
+  "reminder": "contact tmr",
+  "notinttech": "FrontEnd, UI",
+  "whynotint": "..."
  },
  {
   "id": "59f1b3ac4ac3b80a0db5afdf",
   "name": "Carl Osborn",
-  "misc": {
-   "tipper": "anna selin",
-   "notes": "is in sweden next week",
-   "reminder": "contact next week",
-   "notinttech": "backend",
-   "whynotint": "interested"
-  }
+  "tipper": "anna selin",
+  "notes": "is in sweden next week",
+  "reminder": "contact next week",
+  "notinttech": "backend",
+  "whynotint": "interested"
  }
 ]

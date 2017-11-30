@@ -1,0 +1,20 @@
+.applicant-editor-controls.save{
+  color: #ffffffb3;
+  float: right;
+  display: inline-block;
+  padding: unset;
+  margin: unset;
+  height: unset;
+  transform: translate(-16px);
+  transition: 0.15s transform; 
+}
+.applicant-editor-controls.save:hover{
+  transform: translate(0px);
+  color: white;
+  transition: 0.15s transform;
+}
+.applicant-editor-controls-text{
+  font-size: 32px;
+  font-weight: 800;
+  margin-left: 16px;
+}

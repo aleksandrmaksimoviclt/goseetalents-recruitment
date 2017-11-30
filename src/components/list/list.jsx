@@ -6,25 +6,28 @@ import './list.css';
 
 const List = (props) => (
   <div className="container">
-    {props.applicants.map(applicant => (
-      <Link
-        className="list-item-preview"
-        style={{ width: '100%' }}
-        key={applicant.id}
-        to={{
-          pathname: `/applicants/${applicant.id}`,
-          state: { modal: true }
-        }} >
-        <div className="list-item-info-wrapper">
-          <div className="list-item-name">
-            {applicant.name}
-          </div>
-          <div className="list-item-important-stuff">
-            {applicant.misc.notes}
-          </div>
+    <div className="applicant-list">
+      {props.applicants.map(applicant => (
+        <div key={applicant.id} className="list-item-preview">
+          <Link
+            style={{ width: '100%' }}
+            className="hoverme"
+            key={applicant.id}
+            to={{
+              pathname: `/applicants/${applicant.id}`,
+            }} >
+            <div className="list-item-info-wrapper">
+              <div className="list-item-name">
+                {applicant.name}
+              </div>
+              <div className="list-item-important-stuff">
+                {applicant.notes}
+              </div>
+            </div>
+          </Link>
         </div>
-      </Link>
-    ))}
+      ))}
+    </div>
   </div>
 );
 
