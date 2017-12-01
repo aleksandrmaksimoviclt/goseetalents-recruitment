@@ -5,6 +5,7 @@ import List from './../../components/list/list';
 
 const Home = (props) => (
   <div className="App">
+    <div>Items</div>
     <List
       applicants={props.applicants}
     />
