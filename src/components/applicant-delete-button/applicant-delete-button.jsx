@@ -12,6 +12,7 @@ const ApplicantDeleteButton = (props) => {
           props.history.push('/');
         }
       })
+      .catch(error => props.showNewToast(`There was an error while deleting. ${error.message}`));
   }
 
 return (
