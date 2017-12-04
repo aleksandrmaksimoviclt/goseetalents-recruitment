@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
 import Home from './components/home/home';
 import Header from './components/header/header';
 import ApplicantEditor from './components/applicant-editor/applicant-editor';
+import ToastContainer from './components/toast/toast-container';
 import './App.css';
 import { API_URL } from './constants';
 
@@ -14,6 +15,7 @@ class App extends React.Component {
     applicants: [],
     applicant: {},
     searchFieldValue: "",
+    toastes: [],
   }
 
   componentWillMount() {
@@ -96,8 +98,36 @@ class App extends React.Component {
         }
       })
       .catch((error) => {
-        console.log(error);
+        self.showNewToast(`There was an error with search. "${error.message}"`);
       });
+  }
+
+  showNewToast = (text) => {
+    const currentToastes = this.state.toastes;
+    let newToast = {};
+    if (currentToastes.length === 0) {
+      newToast = {
+        id: 0,
+        message: text,
+      }
+    } else {
+      newToast = {
+        id: currentToastes[currentToastes.length-1].id+1,
+        message: text,
+      }
+    }
+    const updatedToastes = currentToastes.concat(newToast);
+    this.setState({
+      toastes: updatedToastes,
+    });
+  }
+
+  dismissToast = (toast) => {
+    const currentToastes = this.state.toastes;
+    const updatedToastes = currentToastes.filter(_toast => _toast.id !== toast.id);
+    this.setState({
+      toastes: updatedToastes,
+    })
   }
 
   noop = () => {};
@@ -137,9 +167,15 @@ class App extends React.Component {
                     handleTextAreValueChange={this.handleTextAreValueChange}
                     createNewApplicant={this.createNewApplicant}
                     pendingApplicant={this.state.pendingApplicant}
+                    showNewToast={this.showNewToast}
+                    dismissToast={this.dismissToast}
                   />
               )}}/>
           </Switch>
+          <ToastContainer
+            toastes={this.state.toastes}
+            dismissToast={this.dismissToast}
+          />
         </div>
       </Router>
     )
