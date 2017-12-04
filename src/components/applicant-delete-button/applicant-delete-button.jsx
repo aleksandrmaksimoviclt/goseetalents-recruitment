@@ -4,7 +4,7 @@ import Axios from 'axios';
 import { API_URL } from './../../constants.js';
 
 const ApplicantDeleteButton = (props) => {
-  this.deleteApplicant = (applicantID) => {
+  const deleteApplicant = (applicantID) => {
     Axios
       .delete(`${API_URL}/applicants/${applicantID}/`)
       .then((response) => {
@@ -17,7 +17,7 @@ const ApplicantDeleteButton = (props) => {
 
 return (
   <div className="applicant-editor-controls">
-    <i onClick={ () => this.deleteApplicant(props.applicantID) } className="fa fa-trash-o small-icon" aria-hidden="true"></i>
+    <i onClick={ () => deleteApplicant(props.applicantID) } className="fa fa-trash-o small-icon" aria-hidden="true"></i>
   </div>
 );
 }

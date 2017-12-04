@@ -5,7 +5,7 @@ import './applicant-save-button.css';
 
 const ApplicantSaveButton = (props) => {
 
-  this.saveApplicant = () => {
+  const saveApplicant = () => {
     props.createNewApplicant()
     .then((response) => {
       props.history.push('/');
@@ -15,7 +15,7 @@ const ApplicantSaveButton = (props) => {
 
   return (
     <div className="applicant-editor-controls save">
-      <i onClick={ () => this.saveApplicant() } className="fa fa-floppy-o small-icon" aria-hidden="true"></i>
+      <i onClick={ () => saveApplicant() } className="fa fa-floppy-o small-icon" aria-hidden="true"></i>
       <span className="applicant-editor-controls-text">
         Save
       </span>
