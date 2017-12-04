@@ -79,7 +79,12 @@ class App extends React.Component {
           }
         })
         .catch((error) => {
-          self.showNewToast(`There was an error while creating new applicant. "${error.message}"`);
+          reject(error.message).then(
+            () => self.showNewToast(
+              `There was an error while creating new applicant.
+              "${error.message}"`
+            )
+          );
         });
     })
 
