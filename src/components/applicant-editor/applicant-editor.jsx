@@ -81,6 +81,8 @@ const ApplicantEditor = (props) => {
           {props.applicant.id !== "new-applicant" &&
             <ApplicantDeleteButton
               applicantID={props.applicant.id}
+              showNewToast={props.showNewToast}
+              dismissToast={props.dismissToast}
             />
           }
 
@@ -88,10 +90,12 @@ const ApplicantEditor = (props) => {
 
         {props.applicant.id === "new-applicant" &&
           <ApplicantSaveButton
+            showNewToast={props.showNewToast}
+            dismissToast={props.dismissToast}
             createNewApplicant={props.createNewApplicant}
           />
         }
-        
+
     </div>
   );
 }
