@@ -10,7 +10,7 @@ const ApplicantSaveButton = (props) => {
     .then((response) => {
       props.history.push('/');
     })
-    .catch(error => console.log(`There was an error with message: ${error}`));
+    .catch(error => props.showNewToast(`There was an error while saving. ${error.message}`));
   }
 
   return (
