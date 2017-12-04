@@ -32,7 +32,7 @@ class App extends React.Component {
         }
       })
       .catch((error) => {
-        console.log(error.message);
+        self.showNewToast(`Couldn't retrieve applicants. "${error.message}"`);
       });
   }
 
@@ -57,7 +57,7 @@ class App extends React.Component {
         }
       })
       .catch((error) => {
-        console.log(error);
+        self.showNewToast(`Couldn't update field. "${error.message}"`);
       });
   }
 
@@ -79,7 +79,7 @@ class App extends React.Component {
           }
         })
         .catch((error) => {
-          reject(error.message)
+          self.showNewToast(`There was an error while creating new applicant. "${error.message}"`);
         });
     })
 
