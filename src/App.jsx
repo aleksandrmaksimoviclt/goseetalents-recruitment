@@ -71,7 +71,7 @@ class App extends React.Component {
     const self = this;
     return new Promise((resolve, reject) => {
       Axios
-        .post(`${API_URL}/applicants/`)
+        .post(`${API_URL}/applicants/`, self.state.pendingApplicant)
         .then((response) => {
           if (response.status === 200) {
             self.setState({ pendingApplicant: {} });
@@ -79,7 +79,12 @@ class App extends React.Component {
           }
         })
         .catch((error) => {
-          self.showNewToast(`There was an error while creating new applicant. "${error.message}"`);
+          reject(error.message).then(
+            () => self.showNewToast(
+              `There was an error while creating new applicant.
+              "${error.message}"`
+            )
+          );
         });
     })
 

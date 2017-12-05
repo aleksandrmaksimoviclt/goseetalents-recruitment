@@ -1,8 +1,33 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
+import { MemoryRouter } from 'react-router';
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+
+describe("App component", () => {
+  let props;
+  let mountedApp;
+  const app = () => {
+    if (!mountedApp) {
+      mountedApp = shallow(
+        <MemoryRouter initialEntries={[ '/' ]}>
+          <App
+            {...props}
+          />
+        </MemoryRouter>
+      );
+    }
+    return mountedApp;
+  }
+
+  beforeEach(() => {
+    props = {};
+    mountedApp = undefined;
+  });
+
+  it("renders an <App />", () => {
+    const application = app()
+    expect(application.length).toBeGreaterThan(0);
+  });
+
 });
