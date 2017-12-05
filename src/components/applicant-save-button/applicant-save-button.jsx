@@ -5,17 +5,17 @@ import './applicant-save-button.css';
 
 const ApplicantSaveButton = (props) => {
 
-  this.saveApplicant = () => {
+  const saveApplicant = () => {
     props.createNewApplicant()
     .then((response) => {
       props.history.push('/');
     })
-    .catch(error => console.log(`There was an error with message: ${error}`));
+    .catch(error => props.showNewToast(`There was an error while saving. ${error.message}`));
   }
 
   return (
     <div className="applicant-editor-controls save">
-      <i onClick={ () => this.saveApplicant() } className="fa fa-floppy-o small-icon" aria-hidden="true"></i>
+      <i onClick={ () => saveApplicant() } className="fa fa-floppy-o small-icon" aria-hidden="true"></i>
       <span className="applicant-editor-controls-text">
         Save
       </span>
