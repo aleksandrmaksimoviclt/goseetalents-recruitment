@@ -27,9 +27,11 @@ class App extends React.Component {
     Axios
       .get(`${API_URL}/applicants/`)
       .then((response) => {
-        if (response.status === 200) {
+        if (response.status === 200 && response.data !== null) {
           self.setState({ applicants: response.data });
+          return;
         }
+        self.showNewToast(`Couldn't retrieve applicants.`);
       })
       .catch((error) => {
         self.showNewToast(`Couldn't retrieve applicants. "${error.message}"`);
