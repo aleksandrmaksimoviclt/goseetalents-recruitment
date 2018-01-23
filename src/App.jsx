@@ -40,7 +40,7 @@ class App extends React.Component {
 
   updateApplicantField = (applicantID, fieldName, value) => {
     const self = this;
-    const currentApplicant = this.state.applicants.find(applicant => applicant.id === applicantID);
+    const currentApplicant = this.state.applicants.find(applicant => applicant._id === applicantID);
     currentApplicant[fieldName] = value;
 
     Axios
@@ -48,7 +48,7 @@ class App extends React.Component {
       .then((response) => {
         if(response.status === 204){
           const updatedApplicants = this.state.applicants.map((applicant) => {
-            if (applicant.id === applicantID) {
+            if (applicant._id === applicantID) {
               return currentApplicant
             }
             return applicant;
@@ -77,7 +77,7 @@ class App extends React.Component {
         .then((response) => {
           if (response.status === 200) {
             self.setState({ pendingApplicant: {} });
-            resolve(response.data.id)
+            resolve(response.data.id);
           }
         })
         .catch((error) => {
@@ -153,15 +153,16 @@ class App extends React.Component {
                   applicants={this.state.applicants}
                   {...props}/>
               )} />
-              <Route path="/applicants/:id" render={({ match, props }) => (
+              <Route path="/applicants/:id" render={({ match, props }) => {
+                return(
                   <ApplicantEditor
-                    applicant={this.state.applicants.find(applicant => applicant.id === match.params.id)}
+                    applicant={this.state.applicants.find(applicant => applicant._id === match.params.id)}
                     updateApplicantField={this.updateApplicantField}
                     handleTextAreValueChange={this.noop}
                     {...props}
                   />
                 )
-              }/>
+              }}/>
               <Route exact={true} path="/add-new-applicant/" render={(props) => {
                 const applicant = {
                   id: "new-applicant",
