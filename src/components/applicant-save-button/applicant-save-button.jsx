@@ -15,8 +15,8 @@ const ApplicantSaveButton = (props) => {
   }
 
   return (
-    <div className="applicant-editor-controls save">
-      <i onClick={ () => saveApplicant() } className="fa fa-floppy-o small-icon" aria-hidden="true"></i>
+    <div tabIndex="0" onClick={ () => saveApplicant() } className="applicant-editor-controls save">
+      <i className="fa fa-floppy-o small-icon" aria-hidden="true"></i>
       <span className="applicant-editor-controls-text">
         Save
       </span>
