@@ -47,10 +47,7 @@ header nav{
 .header-user-avatar-wrapper {
   margin-left: 16px;
 }
-.header-add-new {
-  margin-left: auto;
-  margin-right: 16px;
-}
+
 .header-user-avatar {
   max-width: 100%;
   height: 100%;
