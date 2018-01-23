@@ -6,7 +6,7 @@ const Textarea = (props) => (
   <TextareaAutosize
     onBlur={
       (event) => props.updateApplicantField(
-        props.applicant.id,
+        props.applicant._id,
         event.target.name,
         event.target.value
       )
