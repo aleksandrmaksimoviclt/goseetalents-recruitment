@@ -38,6 +38,10 @@ class App extends React.Component {
       });
   }
 
+  addNewApplicantToState = (applicant) => {
+    this.setState({applicants: this.state.applicants.concat(applicant)});
+  }
+
   updateApplicantField = (applicantID, fieldName, value) => {
     const self = this;
     const currentApplicant = this.state.applicants.find(applicant => applicant._id === applicantID);
@@ -76,20 +80,15 @@ class App extends React.Component {
         .post(`${API_URL}/applicants/`, self.state.pendingApplicant)
         .then((response) => {
           if (response.status === 200) {
+            self.addNewApplicantToState(response.data);
             self.setState({ pendingApplicant: {} });
             resolve(response.data.id);
           }
         })
         .catch((error) => {
-          reject(error.message).then(
-            () => self.showNewToast(
-              `There was an error while creating new applicant.
-              "${error.message}"`
-            )
-          );
+          reject(error.message);
         });
     })
-
   }
 
   handleSearchInput = (event) => {
