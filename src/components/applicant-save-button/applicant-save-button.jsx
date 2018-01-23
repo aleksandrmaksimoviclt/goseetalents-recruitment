@@ -7,10 +7,11 @@ const ApplicantSaveButton = (props) => {
 
   const saveApplicant = () => {
     props.createNewApplicant()
-    .then((response) => {
+    .then(() => {
+      props.showNewToast(`Saved successfully!`);
       props.history.push('/');
     })
-    .catch(error => props.showNewToast(`There was an error while saving. ${error.message}`));
+    .catch(error => props.showNewToast(`There was an error while saving. Because: ${error}`));
   }
 
   return (
