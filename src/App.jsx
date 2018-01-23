@@ -49,26 +49,32 @@ class App extends React.Component {
   updateApplicantField = (applicantID, fieldName, value) => {
     const self = this;
     const currentApplicant = this.state.applicants.find(applicant => applicant._id === applicantID);
-    currentApplicant[fieldName] = value;
 
-    Axios
-      .put(`${API_URL}/applicants/${applicantID}/`, currentApplicant)
-      .then((response) => {
-        if(response.status === 204){
-          const updatedApplicants = this.state.applicants.map((applicant) => {
-            if (applicant._id === applicantID) {
-              return currentApplicant
-            }
-            return applicant;
-          });
-          self.setState({
-            applicants: updatedApplicants,
-          });
-        }
-      })
-      .catch((error) => {
-        self.showNewToast(`Couldn't update field. "${error.message}"`);
-      });
+    if(!(currentApplicant[fieldName] === value)) {
+
+      currentApplicant[fieldName] = value;
+
+      Axios
+        .put(`${API_URL}/applicants/${applicantID}/`, currentApplicant)
+        .then((response) => {
+          if(response.status === 204){
+            const updatedApplicants = this.state.applicants.map((applicant) => {
+              if (applicant._id === applicantID) {
+                return currentApplicant
+              }
+              return applicant;
+            });
+            self.setState({
+              applicants: updatedApplicants,
+            });
+          }
+        })
+        .catch((error) => {
+          self.showNewToast(`Couldn't update field. "${error.message}"`);
+        });
+    }
+
+    return;
   }
 
   handleTextAreValueChange = (name, value) => {
