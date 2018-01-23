@@ -12,7 +12,7 @@ class Toast extends React.Component {
   }
 
   componentWillMount() {
-    setTimeout(() => this.props.dismissToast(this.props), 5000);
+    setTimeout(() => this.props.dismissToast(this.props), 10000);
   }
 
   render() {
