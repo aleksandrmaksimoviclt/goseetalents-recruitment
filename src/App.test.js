@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { MemoryRouter } from 'react-router';
 import App from './App';
 
 
@@ -10,11 +9,9 @@ describe("App component", () => {
   const app = () => {
     if (!mountedApp) {
       mountedApp = shallow(
-        <MemoryRouter initialEntries={[ '/' ]}>
           <App
             {...props}
           />
-        </MemoryRouter>
       );
     }
     return mountedApp;

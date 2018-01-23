@@ -57,7 +57,7 @@ describe("Home with applicants", () => {
 
   it("sets correct href to applicant editor <List /> from mocked json", () => {
     const list = home().find(List);
-    const applicantURL = `/applicants/${applicants[0].id}`;
+    const applicantURL = `/applicants/${applicants[0]._id}`;
     const firstApplicantHref = list.find({ href: applicantURL });
     expect(firstApplicantHref).toHaveLength(1);
   });
