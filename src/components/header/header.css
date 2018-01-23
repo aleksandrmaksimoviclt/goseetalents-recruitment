@@ -32,7 +32,21 @@ header nav{
   margin-left: auto;
   margin-right: 16px;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: normal;
+  transition: transform .1s;
+}
+
+
+.header-add-new:hover {
+  color: #000;
+  border-bottom: 1px solid black;
+  transform: translate(4px);
+  transition: transform .1s;
+}
+
+.header-add-new:active {
+  transform: translate(8px);
+  transition: transform .1s;
 }
 
 .header-user {
