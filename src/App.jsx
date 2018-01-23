@@ -42,6 +42,10 @@ class App extends React.Component {
     this.setState({applicants: this.state.applicants.concat(applicant)});
   }
 
+  removeApplicantFromState = (applicantID) => {
+    this.setState({applicants: this.state.applicants.filter(_applicant => _applicant._id !== applicantID) })
+  }
+
   updateApplicantField = (applicantID, fieldName, value) => {
     const self = this;
     const currentApplicant = this.state.applicants.find(applicant => applicant._id === applicantID);
@@ -156,6 +160,7 @@ class App extends React.Component {
                 return(
                   <ApplicantEditor
                     applicant={this.state.applicants.find(applicant => applicant._id === match.params.id)}
+                    removeApplicantFromState={this.removeApplicantFromState}
                     updateApplicantField={this.updateApplicantField}
                     handleTextAreValueChange={this.noop}
                     {...props}

@@ -87,6 +87,7 @@ const ApplicantEditor = (props) => {
               applicantID={props.applicant._id}
               showNewToast={props.showNewToast}
               dismissToast={props.dismissToast}
+              removeApplicantFromState={props.removeApplicantFromState}
             />
           }
 

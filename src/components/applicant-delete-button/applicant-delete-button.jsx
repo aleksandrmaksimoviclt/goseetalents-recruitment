@@ -8,7 +8,8 @@ const ApplicantDeleteButton = (props) => {
     Axios
       .delete(`${API_URL}/applicants/${applicantID}/`)
       .then((response) => {
-        if(response.status === 200) {
+        if(response.status === 204) {
+          props.removeApplicantFromState(applicantID);
           props.history.push('/');
         }
       })
