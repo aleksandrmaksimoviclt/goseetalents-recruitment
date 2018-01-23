@@ -4,7 +4,7 @@
 
 a:-webkit-any-link {
   color: unset;
-  cursor: auto;
+  cursor: pointer;
   text-decoration: none;
 }
 
