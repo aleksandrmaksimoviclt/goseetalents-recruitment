@@ -78,9 +78,9 @@ const ApplicantEditor = (props) => {
             </div>
           </div>
 
-          {props.applicant.id !== "new-applicant" &&
+          {props.applicant._id !== "new-applicant" &&
             <ApplicantDeleteButton
-              applicantID={props.applicant.id}
+              applicantID={props.applicant._id}
               showNewToast={props.showNewToast}
               dismissToast={props.dismissToast}
             />
