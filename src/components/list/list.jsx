@@ -10,13 +10,13 @@ const List = (props) => {
       <div className="container">
         <div className="applicant-list">
           {props.applicants.map(applicant => (
-            <div key={applicant.id} className="list-item-preview">
+            <div key={applicant._id} className="list-item-preview">
               <Link
                 style={{ width: '100%' }}
                 className="list-item-link"
-                key={applicant.id}
+                key={applicant._id}
                 to={{
-                  pathname: `/applicants/${applicant.id}`,
+                  pathname: `/applicants/${applicant._id}`,
                 }} >
                 <div className="list-item-info-wrapper">
                   <div className="list-item-name">
