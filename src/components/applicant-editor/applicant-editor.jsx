@@ -8,6 +8,10 @@ import ApplicantDeleteButton from './../applicant-delete-button/applicant-delete
 
 const ApplicantEditor = (props) => {
 
+  if (props.applicant === undefined) {
+    return null
+  }
+
   return (
     <div className="container">
         <div className="applicant-wrapper">
