@@ -6,10 +6,13 @@ import './list.css';
 
 const List = (props) => {
   if(props.applicants !== undefined) {
+
+    const sortedApplicants = props.applicants.sort((a,b) => a.name.localeCompare(b.name));
+
     return (
       <div className="container">
         <div className="applicant-list">
-          {props.applicants.map(applicant => (
+          {sortedApplicants.map(applicant => (
             <div key={applicant._id} className="list-item-preview">
               <Link
                 style={{ width: '100%' }}
