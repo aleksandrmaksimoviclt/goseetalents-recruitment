@@ -107,7 +107,7 @@ class App extends React.Component {
     const self = this;
 
     Axios
-      .get(`${API_URL}/applicants?name=${self.state.searchFieldValue}`)
+      .get(`${API_URL}/applicants?name=${event.target.value}`)
       .then((response) => {
         if(response.status === 200){
           self.setState({ applicants: response.data });
