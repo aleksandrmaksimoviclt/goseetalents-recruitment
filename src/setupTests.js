@@ -7,5 +7,6 @@ configure({ adapter: new Adapter() });
 
 // Fail tests on any warning
 console.error = message => {
-   throw new Error(message);
+  spyOn(console, 'error');
+  throw new Error(message);
 };
