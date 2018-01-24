@@ -11,15 +11,20 @@ const ApplicantSaveButton = (props) => {
       props.showNewToast(`Saved successfully!`);
       props.history.push('/');
     })
-    .catch(error => props.showNewToast(`There was an error while saving. Because: ${error}`));
+    .catch(error => props.showNewToast(
+      `There was an error while saving. Because: ${error}`)
+    );
   }
 
   return (
-    <div tabIndex="0" onClick={ () => saveApplicant() } className="applicant-editor-controls save">
-      <i className="fa fa-floppy-o small-icon" aria-hidden="true"></i>
-      <span className="applicant-editor-controls-text">
-        Save
-      </span>
+    <div
+      tabIndex="0"
+      onClick={ () => saveApplicant() }
+      className="applicant-editor-controls save">
+        <i className="fa fa-floppy-o small-icon" aria-hidden="true"></i>
+        <span className="applicant-editor-controls-text">
+          Save
+        </span>
     </div>
   );
 }
