@@ -8,7 +8,7 @@ import applicants from '../../applicants.json';
 describe("Home with applicants", () => {
   let props;
   let mountedEditor;
-  const applicantID = applicants[0].id;
+  const applicantID = applicants[0]._id;
   const editor = () => {
     if (!mountedEditor) {
       mountedEditor = mount(
