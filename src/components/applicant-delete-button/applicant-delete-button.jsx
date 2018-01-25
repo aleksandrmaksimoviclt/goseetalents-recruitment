@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Axios from 'axios';
 import { API_URL } from './../../constants.js';
+import '../applicant-save-button/applicant-save-button.css';
 
 const ApplicantDeleteButton = (props) => {
   const deleteApplicant = (applicantID) => {
@@ -17,8 +18,16 @@ const ApplicantDeleteButton = (props) => {
   }
 
 return (
-  <div className="applicant-editor-controls">
-    <i onClick={ () => deleteApplicant(props.applicantID) } className="fa fa-trash-o small-icon" aria-hidden="true"></i>
+  <div
+    tabIndex="0"
+    onClick={ () => deleteApplicant(props.applicantID) }
+    className="applicant-editor-controls save">
+    <i className="fa fa-trash-o small-icon"
+      aria-hidden="true">
+    </i>
+    <span className="applicant-editor-controls-text ">
+      Delete
+    </span>
   </div>
 );
 }

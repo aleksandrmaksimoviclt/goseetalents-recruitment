@@ -1,5 +1,5 @@
 header {
-  height: 32px;
+  height: 64px;
   line-height: 32px;
   padding: 16px;
   background-color: #fcfbf7;
@@ -14,8 +14,8 @@ header {
 header nav{
   height: 100%;
   width: 100%;
-  display: inline-flex;
-  /*justify-content: space-between;*/
+  display: flex;
+  justify-content: space-between;
 }
 
 .header-logo-wrap {
@@ -29,7 +29,6 @@ header nav{
 }
 
 .header-add-new {
-  margin-left: auto;
   margin-right: 16px;
   font-size: 16px;
   font-weight: normal;

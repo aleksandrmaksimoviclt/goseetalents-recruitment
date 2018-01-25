@@ -175,7 +175,7 @@ class App extends React.Component {
               }}/>
               <Route exact={true} path="/add-new-applicant/" render={(props) => {
                 const applicant = {
-                  id: "new-applicant",
+                  _id: "new-applicant",
                   name: "Name",
                 };
                 return(

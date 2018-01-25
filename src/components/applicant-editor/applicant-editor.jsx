@@ -81,19 +81,18 @@ const ApplicantEditor = (props) => {
               </div>
             </div>
           </div>
-
-          {props.applicant._id !== "new-applicant" &&
-            <ApplicantDeleteButton
-              applicantID={props.applicant._id}
-              showNewToast={props.showNewToast}
-              dismissToast={props.dismissToast}
-              removeApplicantFromState={props.removeApplicantFromState}
-            />
-          }
-
         </div>
 
-        {props.applicant.id === "new-applicant" &&
+        {props.applicant._id !== "new-applicant" &&
+          <ApplicantDeleteButton
+            applicantID={props.applicant._id}
+            showNewToast={props.showNewToast}
+            dismissToast={props.dismissToast}
+            removeApplicantFromState={props.removeApplicantFromState}
+          />
+        }
+
+        {props.applicant._id === "new-applicant" &&
           <ApplicantSaveButton
             showNewToast={props.showNewToast}
             dismissToast={props.dismissToast}

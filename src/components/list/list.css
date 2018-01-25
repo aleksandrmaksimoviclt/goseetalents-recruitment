@@ -38,3 +38,9 @@
   max-width: 80ch;
   letter-spacing: 0.03em;
 }
+
+@media only screen and (max-width: 768px) {
+  .applicant-list{
+    padding: 0 16px;
+  }
+}
