@@ -1,14 +1,13 @@
-.applicant-editor-controls.save{
+.applicant-editor-controls.delete{
   color: #ffffffb3;
-  float: right;
+  float: left;
   display: inline-block;
   padding: unset;
-  /*margin: unset;*/
   height: unset;
   transform: translate(-16px);
   transition: 0.15s transform;
 }
-.applicant-editor-controls.save:hover{
+.applicant-editor-controls.delete:hover{
   transform: translate(0px);
   color: white;
   transition: 0.15s transform;

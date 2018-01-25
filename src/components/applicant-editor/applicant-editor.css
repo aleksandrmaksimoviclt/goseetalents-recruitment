@@ -67,6 +67,9 @@ textarea{
   overflow: hidden;
   resize: none;
 }
+textarea::placeholder{
+  color: #bdbdbd;
+}
 .applicant-editor-controls {
   padding: 32px;
   margin: 32px;
