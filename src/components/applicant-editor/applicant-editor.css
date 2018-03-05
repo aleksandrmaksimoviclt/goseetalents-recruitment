@@ -43,6 +43,18 @@
   border: 2px solid #4FC3F7;
   border-radius: 3px;
 }
+.applicant-last-modified-wrapper {
+  padding-top: 96px;
+  padding-right: 64px;
+  width: 226px;
+  box-sizing: content-box;
+}
+.last-modified {
+  font-weight: 700;
+}
+.last-modified.value {
+  font-weight: 400;
+}
 .arrow-back {
   padding: 32px;
   font-size: 32px;

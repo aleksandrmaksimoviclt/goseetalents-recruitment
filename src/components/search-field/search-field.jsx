@@ -4,7 +4,10 @@ import './search-field.css';
 
 const SearchField = (props) => (
   <div className="search-field-wrapper">
-    <div className="search-field">
+    <div
+      className="search-field"
+      style={{ display: window.location.pathname === "/" ? 'flex': 'none'}}
+    >
       <i className="fa fa-search search-field-icon"></i>
       <input
         type="text"

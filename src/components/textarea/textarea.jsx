@@ -18,10 +18,10 @@ const Textarea = (props) => (
       )
     }
     spellCheck="false"
-    placeholder="Write text here..."
     name={props.name}
     defaultValue={props.applicant[props.name]}
-    className={`applicant-${props.name}`}>
+    placeholder="&#x270e; I am editable!"
+    className={`applicant-${props.name} testclass`}>
   </TextareaAutosize>
 );
 

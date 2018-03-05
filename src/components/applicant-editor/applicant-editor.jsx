@@ -81,13 +81,30 @@ const ApplicantEditor = (props) => {
               </div>
             </div>
           </div>
+
+          {props.applicant.lastsaved !== undefined &&
+          <div className="applicant-last-modified-wrapper">
+            <span className="last-modified">Last saved:</span><br/>
+            <span className="last-modified value">
+              {new Date(props.applicant.lastsaved).toDateString()}
+            </span>
+            <br/>
+            <span className="last-modified value">
+              {new Date(props.applicant.lastsaved).toTimeString().split(' ')[0]}
+            </span>
+            <br/>
+          </div>
+          }
         </div>
+
 
         {props.applicant._id !== "new-applicant" &&
           <ApplicantDeleteButton
             applicantID={props.applicant._id}
             showNewToast={props.showNewToast}
             dismissToast={props.dismissToast}
+            showDeleteConfirmation={props.showDeleteConfirmation}
+            handleShowDeleteConfirmation={props.handleShowDeleteConfirmation}
             removeApplicantFromState={props.removeApplicantFromState}
           />
         }
