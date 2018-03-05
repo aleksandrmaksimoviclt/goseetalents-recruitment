@@ -1,3 +1,4 @@
+/* global gapi */
 import React from 'react';
 import Axios from 'axios';
 
@@ -16,6 +17,12 @@ class App extends React.Component {
     applicant: {},
     searchFieldValue: "",
     toastes: [],
+    username: "",
+    email: "",
+    profilePicUrl: "",
+    showMoreOptions: false,
+    isAuthenticated: false,
+    showDeleteConfirmation: false
   }
 
   componentWillMount() {
@@ -25,7 +32,7 @@ class App extends React.Component {
   getApplicants = () => {
     const self = this;
     Axios
-      .get(`${API_URL}/applicants/`)
+      .get(`${API_URL}/applicants/`, {withCredentials: true})
       .then((response) => {
         if (response.status === 200 && response.data !== null) {
           self.setState({ applicants: response.data });
@@ -55,11 +62,12 @@ class App extends React.Component {
       currentApplicant[fieldName] = value;
 
       Axios
-        .put(`${API_URL}/applicants/${applicantID}/`, currentApplicant)
+        .put(`${API_URL}/applicants/${applicantID}/`, currentApplicant, {withCredentials: true})
         .then((response) => {
           if(response.status === 204){
             const updatedApplicants = this.state.applicants.map((applicant) => {
               if (applicant._id === applicantID) {
+                currentApplicant.lastsaved = Date.now();
                 return currentApplicant
               }
               return applicant;
@@ -87,7 +95,7 @@ class App extends React.Component {
     const self = this;
     return new Promise((resolve, reject) => {
       Axios
-        .post(`${API_URL}/applicants/`, self.state.pendingApplicant)
+        .post(`${API_URL}/applicants/`, self.state.pendingApplicant, {withCredentials: true})
         .then((response) => {
           if (response.status === 200) {
             self.addNewApplicantToState(response.data);
@@ -107,7 +115,7 @@ class App extends React.Component {
     const self = this;
 
     Axios
-      .get(`${API_URL}/applicants?name=${event.target.value}`)
+      .get(`${API_URL}/applicants?name=${event.target.value}`, {withCredentials: true})
       .then((response) => {
         if(response.status === 200){
           self.setState({ applicants: response.data });
@@ -146,6 +154,55 @@ class App extends React.Component {
     })
   }
 
+  validateIdToken = (idToken) => {
+    const self = this;
+
+    Axios
+      .post(`${API_URL}/auth/google/`,
+        {
+          idToken: idToken
+        }
+      )
+      .then((response) => {
+        if (response.status === 200) {
+          self.getApplicants();
+        }
+      })
+      .catch((error) =>{
+        self.showNewToast(error.message);
+      });
+  }
+
+  onSignIn = (User) => {
+    const profile = User.getBasicProfile();
+    const idToken = User.getAuthResponse().id_token;
+    this.validateIdToken(idToken);
+    this.setState({
+      username: profile.getName(),
+      email: profile.getEmail(),
+      profilePicUrl: profile.getImageUrl(),
+      isAuthenticated: true
+    });
+  }
+
+  onSignOut = () => {
+    const self = this;
+    const auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(() => {
+      self.setState({ isAuthenticated: false, showMoreOptions: false, applicants: [] });
+      self.showNewToast('User signed out.');
+    });
+  }
+
+  handleShowMoreOptions = () => {
+    this.setState({ showMoreOptions: !(this.state.showMoreOptions) });
+  }
+
+  handleShowDeleteConfirmation = () => {
+    console.log('handleShowMoreOptions');
+    this.setState({ showDeleteConfirmation: !(this.state.showDeleteConfirmation) })
+  }
+
   noop = () => {};
 
   render() {
@@ -155,6 +212,14 @@ class App extends React.Component {
           <Header
             searchFieldValue={this.state.searchFieldValue}
             handleSearchInput={this.handleSearchInput}
+            onSignIn={this.onSignIn}
+            onSignOut={this.onSignOut}
+            username={this.state.username}
+            profilePicUrl={this.state.profilePicUrl}
+            email={this.state.email}
+            isAuthenticated={this.state.isAuthenticated}
+            handleShowMoreOptions={this.handleShowMoreOptions}
+            showMoreOptions={this.state.showMoreOptions}
           />
           <Switch>
               <Route exact={true} path="/" render={(props) => (
@@ -169,6 +234,8 @@ class App extends React.Component {
                     removeApplicantFromState={this.removeApplicantFromState}
                     updateApplicantField={this.updateApplicantField}
                     handleTextAreValueChange={this.noop}
+                    showDeleteConfirmation={this.state.showDeleteConfirmation}
+                    handleShowDeleteConfirmation={this.handleShowDeleteConfirmation}
                     {...props}
                   />
                 )
